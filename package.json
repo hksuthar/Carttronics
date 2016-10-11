@@ -1,0 +1,41 @@
+{
+  "name": "carttronics",
+  "version": "0.0.0",
+  "main": "server.js",
+  "dependencies": {
+    "async": "^1.5.2",
+    "bcryptjs": "^2.3.0",
+    "body-parser": "^1.15.0",
+    "colors": "^1.1.2",
+    "cors": "^2.7.1",
+    "express": "^4.13.4",
+    "jwt-simple": "^0.4.1",
+    "moment": "^2.12.0",
+    "mongoose": "^4.4.6",
+    "morgan": "^1.7.0",
+    "request": "^2.69.0"
+  }
+}
+{
+  "name": "expapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "3.9.0",
+    "gulp-develop-server": "0.5.0",
+    "gulp-jshint": "1.12.0"
+  },
+  "dependencies": {
+    "body-parser": "1.14.1",
+    "csvjson": "^2.2.0",
+    "express": "4.13.3",
+    "fs": "0.0.2",
+    "multer": "1.1.0"
+  }
+}

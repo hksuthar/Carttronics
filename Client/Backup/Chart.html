@@ -1,0 +1,205 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Chart Demo</title>
+      <script type="text/javascript" src="./node_modules/zingchart/client/zingchart.min.js"></script>
+</head>
+<body>
+     <script>
+         // Generates GET requests to a URL.
+         function httpGet(Url) {
+             alert(Url);
+             debugger;
+             var xmlHttp = new XMLHttpRequest();
+             xmlHttp.open("GET", Url, false);
+             xmlHttp.send(null);
+             return xmlHttp.responseText;
+             console.log(xmlHttp.responseText);
+         }
+
+         window.onload = function () {
+           
+
+             console.log('in onload function');
+           
+
+             // GET request to localhost:3000/test, which has been configured to send back our db data
+             var aData = JSON.parse(httpGet('http://localhost:3000/Carttronic'));
+            
+          
+             var seriesData = {
+                 Date_1: [],
+                 Shoppnig_1: [],
+                 Parking_Lot_1: [],
+                 Checked_Out_1: [],
+                 Trolley_Bay_1: []
+
+
+
+             };
+
+             // Push the data into the seriesData object's arrays.
+             console.log(aData.length);
+             for (var n = 0; n < aData.length; n++) {
+                 
+                 seriesData['Date_1'].push(aData[n]['Date']);
+                 seriesData['Shoppnig_1'].push(aData[n]['Shoppnig']);
+                 seriesData['Parking_Lot_1'].push(aData[n]['ParkingLot']);
+                 seriesData['Checked_Out_1'].push(aData[n]['CheckedOut']);
+                 seriesData['Trolley_Bay_1'].push(aData[n]['TrolleyBay']);
+             }
+            
+             var startdate = 1453421700000;
+             // Render the chart using the data from Mongo
+             var myconfig = {
+                 "graphset": [
+                                     {
+
+                                         "x": "5%",
+                                         "y": "10%",
+                                         "height": "40%",
+                                         "width": "90%",
+
+                                         "type": "line",
+                                         "stacked": false,
+                                         "utc": true,
+
+                                         "zoom": { "shared": true },
+
+                                         "title": { "text": "Cart Locations" },
+                                          
+
+                                         "legend": {
+                                             "type": "line",
+                                             "border-radius": 5,
+                                             "border-width": 0,
+                                             "shadow": 0,
+                                             "item": { "font-size": "12px" },
+                                             "vertical-labels": true
+                                         },
+
+                                         "scale-x": {
+                                             "shadow": 0,
+                                             "zooming": true,
+                                             "tick": {},
+                                             "guide": {},
+                                             "item": {},
+                                             minValue: startdate,
+
+                                            step: 60000, //unix time in milliseconds (this is a one minute step)
+                                            // minValue: 1453421700000, //unix time in milliseconds
+                                            // step: 60000, //unix time in milliseconds (this is a one minute step)
+                                           
+                                             "transform": {
+                                                 "type": "date",
+
+                                                 "all": "%D, %d %M<br />%h:%i %A",
+                                                 "guide": { "visible": false },
+                                                 "item": { "visible": false }
+                                             },
+
+                                             "label": { "visible": false },
+                                             "minor-ticks": 0
+                                         },
+
+                                         "scale-y": {
+                                             "blended": true,
+                                             "offset-start": "50%",
+                                             "label": { "text": "In Store" },
+                                             "guide": { "line-style": "dashed" },
+                                             "item": { "font-size": 10 },
+                                             "shadow": 0,
+                                             "minor-ticks": 0,
+                                             "tick": {},
+                                         },
+
+                                         "scale-y-2": {
+
+                                             "blended": true,
+                                             "offset-end": "60%",
+                                             "placement": "default",
+                                             "-values": "0:10:5",
+
+                                             "label": { "text": "Outside" },
+                                             "guide": { "line-style": "dashed" },
+                                             "item": { "font-size": 10 },
+                                             "shadow": 0,
+                                             "minor-ticks": 0,
+                                             "tick": {},
+                                         },
+
+                                         "crosshair-x": {
+                                             "shared": true,
+                                             "line-color": "#f6f7f8",
+                                             "plot-label": {
+                                                 "border-radius": "5px",
+                                                 "border-width": "1px",
+                                                 "padding": "10px",
+                                                 "font-weight": "bold"
+                                             },
+                                             "scale-label": {
+                                                 "border-radius": "5px"
+                                             }
+                                         },
+
+                                         "tooltip": { "visible": false },
+
+                                         "plot": {
+                                             "tooltip-text": "%t views: %v<br>%k",
+                                             "shadow": 0,
+                                             "line-width": 0,
+                                             "marker": { "size": 0, "border-width": 0, "shadow": 0 },
+                                             "hover-marker": {
+                                                 "type": "circle",
+                                                 "size": 4,
+                                                 "border-width": "1px"
+                                             }
+                                         },
+
+                                         "series": [
+                                             {
+                                                  'text': 'Shopping Lot',  
+
+                                                 "values": seriesData['Shoppnig_1'],
+                                                 "type": "area",
+                                                 "line-width": 2,
+                                                 "scales": "scale-x,scale-y-2",
+                                             },
+                                             {
+                                                'text': 'Parking Lot', 
+                                                 "values": seriesData['Parking_Lot_1'],
+                                                 "type": "area",
+                                                 "line-width": 2,
+                                                 "scales": "scale-x,scale-y-2",
+                                             },
+                                             {
+                                                'text': 'Checked Out', 
+                                                 "values": seriesData['Checked_Out_1'],
+                                                 "type": "area",
+                                                 "line-width": 2,
+                                                 "scales": "scale-x,scale-y",
+                                             },
+                                             {  'text': 'Trolley Bay', 
+                                                 "values": seriesData['Trolley_Bay_1'],
+                                                 "type": "area",
+                                                 "line-width": 2,
+                                                 "scales": "scale-x,scale-y",
+                                             }
+                                         ],
+                                     }
+
+
+                 ]
+             }
+             zingchart.render({
+                 id: "myChart",
+                 width: "100%",
+                 data: myconfig,
+                 height: 900,
+
+             });
+         }
+    </script>
+    
+    <div id="myChart"></div>
+</body>
+</html>

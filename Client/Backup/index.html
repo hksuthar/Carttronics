@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>store1</title>
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/styles1.css" rel="stylesheet">
+    </head>
+    <body ng-app="MyChart">
+        <nav class="navbar navbar-inverse top_nav navbar-fixed-top" role="navigation">
+            <div class="container-fluid container" ng-model="Chart_1">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="btn1_group">
+                        <div class="btn_adm">
+                            <img src="image/icon.png"/>
+                            <button onclick="window.location.href = 'dashboard.html'">site administrator</button>
+                        </div>
+                        <div class="fileUpload btn-upload">
+                            <img src="image/upload.png">
+                            <!-- <span>Upload</span> -->
+                            <button onclick="window.location.href = 'upload.html'">Upload File</button>
+                            <!-- <input type="file" ngf-select ng-model="up.file" name="file" class="upload" /> -->
+                        </div>
+                    </div>
+                    <a class="navbar-brand" href="index.html"><img src="image/Logo.png"/></a>
+                    <ul class="user-menu">
+                        <li class="dropdown pull-right">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Welcome {{favoriteCookie}}<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Profile</a></li>
+                                <li><a href="#"><svg class="glyph stroked gear"><use xlink:href="#stroked-gear"></use></svg> Settings</a></li>
+                                <li><a href="login.html"><svg class="glyph stroked cancel"><use xlink:href="#stroked-cancel"></use></svg> Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>   
+            </div><!-- /.container-fluid -->
+        </nav>
+
+
+        <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar" ng-controller="Chart_1">
+            <ul class="nav menu"> 
+                <li class="active" ng-repeat="name in collInfos">
+                    <a href="index.html"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg>
+                    <label> [{name.name}] </label></a>
+                </li>
+                <!-- <li>
+                    <a href="index.html"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg>
+                    <label> Albertsons 6714</label></a>
+                </li>
+                <li>
+                    <a href="index.html"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg>
+                    <label> Albertsons 6715</label></a>
+                </li>
+                <li>
+                    <a href="index.html"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg>
+                    <label> Al bertsons 6716</label></a>
+                </li> -->
+            </ul>
+
+        </div><!--/.sidebar-->
+
+
+        <div class="col-sm-9 col-sm-offset-2 col-lg-9 col-lg-offset-2 main">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#home">Cart Locations</a></li>
+                <li><a data-toggle="tab" href="#menu1">Cart location2</a></li>
+            </ul>
+
+
+            <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
+                    <div id="myChart"></div>
+                </div>
+                <div id="menu1" class="tab-pane fade">
+                    <h3>Chart 2</h3>
+                    <img src="image/FishEye_Charts_Page02.png" class="img-responsive" alt="chart1"/>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-inverse nav_bottom navbar-fixed-bottom">
+            <div class="copyright">
+                <p>© CARTTRONICS, INC. ALL RIGHTS RESERVED</p>
+            </div>
+        </nav>
+       
+        <!--<script type="text/javascript" src="js/firebug.js"></script>-->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+        <script type="text/javascript" src="node_modules/zingchart/client/zingchart.min.js"></script>
+        <script src = "controllers/Chart.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="UTF-8">
+        <title>Dashboard</title>
+        <link href="css/bootstrap.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/style1.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+        <script type="text/javascript" src="node_modules/zingchart/client/zingchart.min.js"></script>
+    </head>
+    <body ng-app="MyChart">
+
+        <div id="wrapper" ng-model="Chart_1" ng-controller="Chart_1">
+            <div id="leftWrapper">
+                <div id="listView" class="list home-menu">
+                    <li class="list-item-active"><a href="#" class="tablinks" onclick="openCity(event, 'store1')">Albertsons 6713</a></li>
+                    <li><a href="#" class="tablinks" onclick="openCity(event, 'store2')">Albertsons Market 671</a></li>
+                    <li><a href="#" class="tablinks" onclick="openCity(event, 'store3')"> Albertsons Market 672</a></li>
+                    <li><a href="#" class="tablinks" onclick="openCity(event, 'store4')"> Albertsons Market 690</a></li>
+                    <li><a href="#" class="tablinks" onclick="openCity(event, 'store5')"> Albertsons 6713</a></li>
+                </div>
+            </div>
+
+            <div id="rightWrapper" class="full-page">
+                <div id="header" class="header-sett">
+                    <div class="container-fluid">
+                        <div class="col-sm-3">
+                            <div class="container-menu" onclick="myFunction(this)">
+                                <a id="fullPage" href="#">
+                                    <div class="bar1"></div>
+                                    <div class="bar2"></div>
+                                    <div class="bar3"></div>
+                                    <p>stores</p></a>  
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 logo-set">
+                            <a href="index.html"><img src="image/Logo.jpg" class="img-responsive"/></a>
+                        </div>
+
+
+                        <div class="btn-group">
+                            <div class="btn-admin">
+                                <button onclick="window.location.href = 'dashboard.html'">Administrator</button>
+                            </div>
+                            <div class="btn-upload">
+                                <button onclick="window.location.href = 'upload.html'">Upload</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- header end -->  
+
+                <div id="contentWrapper">
+                    <article id="showCase">
+                        <div class="">  
+                            <div id="store1" class="tabcontent ghraphs-tabs">
+                                <ul class="tab">
+                                    <li><a href="#" class="tablinks1 active" onclick="openCity1(event, 'London')">Cart location1</a></li>
+                                    <li><a href="#" class="tablinks1" onclick="openCity1(event, 'Paris')">Cart location2</a></li>
+                                </ul>
+                                <div id="London" class="tabcontent1" style="display: block;">
+                                    <!-- <img  src="image/chart3.jpg"> -->
+                                    <div id="myChart"></div>
+                                </div>
+                                <div id="Paris" class="tabcontent1" style="display: none;">
+                                    <img  src="image/chart2.png">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="store2" class="tabcontent">
+                            <img  src="image/chart3.jpg">
+                        </div>
+                        <div id="store3" class="tabcontent">
+                            <img  src="image/chart1.jpg">
+                        </div>
+                        <div id="store4" class="tabcontent">
+                            <img  src="image/chart3.jpg">
+                        </div>
+                        <div id="store5" class="tabcontent">
+                            <img  src="image/chart1.jpg">
+                        </div>
+                    </article>
+
+                    <div class="detpicker-set">
+                        <form action="#">
+                            <span> Date: </span>
+                            <input type="date" name="week">
+                            <input type="submit">
+                        </form>
+                    </div>
+
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn">Select Graph Show</button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <a href="#home">1 D</a>
+                            <a href="#about">1 W</a>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        <script>
+            function openCity(evt, cityName) {
+                // Declare all variables
+                var i, tabcontent, tablinks;
+
+                // Get all elements with class="tabcontent" and hide them
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+
+                // Get all elements with class="tablinks" and remove the class "active"
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+
+                // Show the current tab, and add an "active" class to the link that opened the tab
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+            function openCity1(evt, cityName) {
+                // Declare all variables
+                var i, tabcontent, tablinks;
+
+                // Get all elements with class="tabcontent" and hide them
+                tabcontent = document.getElementsByClassName("tabcontent1");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+
+                // Get all elements with class="tablinks" and remove the class "active"
+                tablinks = document.getElementsByClassName("tablinks1");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+
+                // Show the current tab, and add an "active" class to the link that opened the tab
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        </script>
+
+
+        <script>
+            /* When the user clicks on the button,
+             toggle between hiding and showing the dropdown content */
+            function myFunction() {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
+
+// Close the dropdown if the user clicks outside of it
+            window.onclick = function (event) {
+                if (!event.target.matches('.dropbtn')) {
+
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains('show')) {
+                            openDropdown.classList.remove('show');
+                        }
+                    }
+                }
+            }
+        </script>
+        <script src="js/index.js"></script>
+        
+        <script src = "controllers/Chart.js"></script>
+
+    </body>
+</html>

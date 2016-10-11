@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="UTF-8">
+        <title>Upload</title>
+        <link href="css/bootstrap.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/style1.css">
+        <script>
+            function submit() {
+                window.open('index.html');
+            }
+        </script>
+    </head>
+    <body ng-app="fileUpload">
+
+        <div class="login-header">
+            <div class="container">
+                <div class="col-sm-12">
+                    <a href="index.html"><img src="image/Logo.jpg" class="img-responsive"></a>
+                </div>
+            </div>
+        </div>
+
+
+        <section class="container">
+            <div class="col-sm-6 col-sm-offset-3 upload-sec">
+                <form ng-controller="MyCtrl as up" name="up.upload_form">
+                    <div class="fileUpload btn-upload-new ">
+                        <span>Upload</span>
+                        <input type="file" ngf-select ng-model="up.file" name="file" class="upload" />
+                    </div>
+
+                    <div class="btn-update">
+                        <button type="submit" ng-click="up.submit()" class="file-upload"> Update </button>
+                    </div>
+                    <div class="per_msg">
+                        <p>{{up.progress}}</p>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+        <script type="text/javascript" src="node_modules/ng-file-upload/dist/ng-file-upload.min.js"></script>
+        <script type="text/javascript" src="node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js"></script>
+        <script type="text/javascript" src="controllers/main.js"></script>
+    </body>
+</html>

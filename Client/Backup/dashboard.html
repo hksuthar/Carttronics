@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html ng-app>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Dashbord</title>
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/style_dashboard.css" rel="stylesheet">
+        <link href="css/styles1.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/datePicker.css">
+        <script src="controllers/controller.js"></script>
+    </head>
+    <body>
+        <!-- <header>
+            <div class="head_set">
+                <div class="container">
+                    <div>
+                        <a href="index.html"><img src="image/Logo.png" class="img-responsive" alt="logo"/></a>
+                    </div>
+                    <div class="msg">
+                        <p>Welcome to Administrator</p>
+                    </div>
+                </div>
+            </div>
+        </header> -->
+
+        <nav class="navbar navbar-inverse top_nav navbar-fixed-top" role="navigation">
+            <div class="container" ng-model="Chart_1">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="btn1_group">
+                        <div class="btn_adm">
+                            <img src="image/icon.png"/>
+                            <button onclick="window.location.href = 'dashbord.html'">site administrator</button>
+                        </div>
+                        <div class="fileUpload btn-upload">
+                            <img src="image/upload.png">
+                            <!-- <span>Upload</span> -->
+                            <button onclick="window.location.href = 'upload.html'">Upload File</button>
+                            <!-- <input type="file" ngf-select ng-model="up.file" name="file" class="upload" /> -->
+                        </div>
+                        <!-- <div class="fileUpload btn-upload">
+                            <img src="image/upload.png">
+                            <input type="file" ngf-select ng-model="up.file" name="file" class="upload" />
+
+                        </div>
+                    
+                        <button class="upload-buttons">Upload</button> -->
+                    </div>
+                    <a class="navbar-brand" href="index.html"><img src="image/Logo.png"/></a>
+                    <ul class="user-menu">
+                        <li class="dropdown pull-right">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Welcome <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Profile</a></li>
+                                <li><a href="#"><svg class="glyph stroked gear"><use xlink:href="#stroked-gear"></use></svg> Settings</a></li>
+                                <li><a href="#"><svg class="glyph stroked cancel"><use xlink:href="#stroked-cancel"></use></svg> Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>   
+            </div><!-- /.container-fluid -->
+        </nav>
+
+              <div class="container" ng-controller="AppCtrl">
+                    <div class="admin_tab">
+                        <div class="col-sm-12">
+                            <div class="til_name col-sm-6">
+                                <h4>Site Admin</h4>
+                            </div>
+                            <div class="add_btn col-sm-6">
+                                <button onclick="window.location.href = 'registration.html'">Add User</button>
+                            </div>
+                        </div>
+                        
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Edit</th>
+                                    <th>User name</th>
+                                    <th>Email</th>
+                                    <th>Description</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="carto in user">
+                                    <td><a ng-click="edit(carto._id)" class="select-button">Select</a></td>
+                                    <td>{{carto.username}}</td>
+                                    <td>{{carto.email}}</td>
+                                    <td>{{carto.desc}}</td>
+                                    <td><button class="btn btn-danger" ng-click="remove(carto._id)">Delete</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+        
+        
+                        <div>
+                            <ul class="pagination">
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                            </ul>
+                        </div>
+        
+                    </div>
+                
+
+
+        <div class="container usd">
+            <h2>User Information</h2>
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#home">Accounts</a></li>
+                <li><a data-toggle="tab" href="#menu1">Profile</a></li>
+                <li><a data-toggle="tab" href="#menu2">Store Access</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
+                    <div class="tab_table">
+                        <h4>Create User Accounts</h4>
+                        <table>
+                            <tbody >
+                                <tr>
+                                    <td>user name:</td>
+                                    <td><input class="form-contact" ng-model="carto.username"></td>
+                                </tr>
+                                <tr>
+                                    <td>password:</td>
+                                    <td><input type="password" class="form-contact" ng-model="carto.password"></td>
+                                </tr>
+                                <tr>
+                                    <td>Email:</td>
+                                    <td><input type="Email" ng-model="carto.email"></td>
+                                </tr>
+                                <tr>
+                                    <td>Description:</td>
+                                    <td><input type="text" ng-model="carto.desc"></td>
+                                </tr>
+                                <tr>
+                                    <td>Roles:</td>
+                                    <td><input ng-model="carto.roles" type="radio" name="roles" ng-value="'Administrator'"><span>Administrator</span>
+                                    <input ng-model="carto.roles" type="radio" name="roles" ng-value="'User'"><span>User</span></td>
+                                </tr>
+                                <tr>
+                                    <td><button ng-click="update()">Save</button></td>
+                                    <td><button>cancel</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="menu1" class="tab-pane fade">
+                     <div class="tab_table">
+                        <h4>User profile Information</h4    >
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>First name:</td>
+                                    <td><input type="text" ng-model="carto.f_name"></td>
+                                </tr>
+                                <tr>
+                                    <td>Middle name:</td>
+                                    <td><input type="text" ng-model="carto.m_name"></td>
+                                </tr>
+                                <tr>
+                                    <td>Last name:</td>
+                                    <td><input type="text" ng-model="carto.l_name"></td>
+                                </tr>
+                                <tr>
+                                    <td>Company:</td>
+                                    <td><input type="text" ng-model="carto.company"></td>
+                                </tr>
+                                <tr>
+                                    <td>Street Address:</td>
+                                    <td><input type="text" ng-model="carto.s_address"></td>
+                                </tr>
+                                <tr>
+                                    <td>Address:</td>
+                                    <td><input type="text" ng-model="carto.address"></td>
+                                </tr>
+                                <tr>
+                                    <td>City:</td>
+                                    <td><input type="text" ng-model="carto.city"></td>
+                                </tr>
+                                <tr>
+                                    <td>State Or Province:</td>
+                                    <td><input type="text" ng-model="carto.s_o_pro"></td>
+                                </tr>
+                                <tr>
+                                    <td>Zip code:</td>
+                                    <td><input type="text" ng-model="carto.zipcode"></td>
+                                </tr>
+                                <tr>
+                                    <td>Country:</td>
+                                    <td><input type="text" ng-model="carto.country"></td>
+                                </tr>
+                                <tr>
+                                    <td>Business Phone:</td>
+                                    <td><input type="text" ng-model="carto.b_phone"></td>
+                                </tr>
+                                <tr>
+                                    <td>Business Phone Ext:</td>
+                                    <td><input type="text" ng-model="carto.b_f_phone"></td>
+                                </tr>
+                                <tr>
+                                    <td>Fax:</td>
+                                    <td><input type="text" ng-model="carto.fax"></td>
+                                </tr>
+                                <tr>
+                                    <td>Cell Phone:</td>
+                                    <td><input type="text" ng-model="carto.phone"></td>
+                                </tr>
+                               
+                                <tr>
+                                    <td><button ng-click="update()">Save</button></td>
+                                    <td><button>cancel</button></td> 
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="menu2" class="tab-pane fade">
+                        <h4>Store Access Data</h4>
+                        <div class="data_box">
+                            <div class="col-sm-2 btn_set">
+                                <button>Save</button>
+                            </div>
+                            <div class="col-sm-2 btn_set">
+                                <button>Cancel</button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+        <script type = "text/javascript" src = "http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" ></script>
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
+
+
+
+    </body>
+</html>

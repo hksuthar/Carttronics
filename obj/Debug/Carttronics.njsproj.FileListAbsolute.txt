@@ -1,0 +1,3 @@
+E:\Tutorial\VS_Try\Carttronics\Carttronics\obj\Debug\Carttronics.njsprojResolveAssemblyReference.cache
+E:\Tutorial\VS_Try\Carttronics\Carttronics\bin\Microsoft.NodejsTools.WebRole.dll
+E:\MHS_System\Mr.Parthiv\Programming\Carttronics\24_09_2016\Carttronics\Carttronics\obj\Debug\Carttronics.njsprojResolveAssemblyReference.cache

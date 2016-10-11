@@ -1,0 +1,279 @@
+.min_set{min-height: 35pc;}
+.logo_sett{margin: 0 auto;display: table;margin-bottom: 10px;}
+.til{margin-bottom: -10px;}
+.til1{margin-right: 10px;}
+.logo_sett img:last-child{float: right;}
+.form_set{margin-top: 5pc;}
+.form_set button{color: #fff;background-color: #f7971d;}
+.logo_border
+{
+    border-bottom: 2px solid #000;
+    margin-top: 4px;
+    -webkit-box-shadow:0px 4px 17px #ccc;
+    -moz-box-shadow:0px 4px 17px #ccc;
+    box-shadow:0px 4px 17px #ccc;
+}
+
+.form-horizontal .control-label 
+{
+    font-size: 16px;
+    padding-top: 7px;
+    margin-bottom: 0;
+    text-align: left;
+    top: 5px;
+    height: 19px;
+}
+.link_set p{margin-left: 20px;}
+.link_set p a{color: #f7971d;}
+
+footer
+{
+    background-color: #ccc;
+    padding: 20px;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+
+footer p
+{
+    margin-bottom: 0px;
+    text-align: center;
+    color: #000;
+    font-size: 15px;
+}
+
+/*dashbord css*/
+
+
+.head_set
+{
+    background-color: #fff;
+    height: 80px;
+    border-bottom: 2px solid #000;
+    -webkit-box-shadow:0px 4px 17px #ccc;
+    -moz-box-shadow:0px 4px 17px #ccc;
+    box-shadow:0px 4px 17px #ccc;
+
+}
+.head_set img{/*margin-top: 15px;*/float: left;}
+.msg p{float: right;font-size: 18px;color: #000;margin-top: 27px;font-weight: 600;}
+.table{text-align: center;}
+.table thead tr th{text-align: center;font-size: 14px;}
+.admin_tab table tbody tr td{font-size: 15px;}
+.admin_tab{margin-top: 3em;}
+.admin_tab h4{font-size: 23px;font-weight: 600;text-transform: capitalize;}
+.admin_tab table tbody tr td button
+{
+    color: #fff;
+    background-color: #f7971d;
+    padding:3px;
+    width: 40%;
+    height: 30px;
+    text-align: center;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    padding: 3px;
+    line-height: 1.42857143;
+    vertical-align: middle;
+    border-top: 1px solid #ddd;
+}
+
+.admin_tab table tbody tr td button:hover{background-color: #ccc;}
+.usd{margin-bottom: 3em;}
+.usd h2
+{
+    font-size: 23px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.pagination {
+    display: inline-block;
+    float: right;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #f7971d;
+    border-color: #ccc;
+}
+
+.tab_table table td{padding: 4px;}
+.tab_table table tbody{border: 1px solid #ccc;}
+.tab_table table tbody tr{border-bottom: 1px solid #ccc;}
+.tab_table table tbody td{border-right: 1px solid #ccc;}
+.tab_table table tbody td:first-child{text-align: right;}
+.tab_table table tbody tr:last-child td{border-right: none;}
+.tab_table table tbody td input[type="submit"]{background: #f7971d;color: #fff;border: none;border-radius: 4px;}
+.tab_table table tbody td input[type="reset"]{background: #f7971d;color: #fff;border: none;border-radius: 4px;}
+
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: #fff;
+    cursor: default;
+    background-color: #f7971d;
+
+    border-bottom-color: transparent;
+}
+
+.data_box
+{
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 50%;
+    height: auto;
+    position: absolute;  
+}
+
+.btn_set input[type="submit"]
+{
+    width: 100%;
+    background: #f7971d;
+    border: 0;
+    color: #fff;
+    border-radius: 3px;
+}
+.btn_set input[type="reset"]
+{
+    width: 100%;
+    background: #f7971d;
+    border: 0;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.footer
+{
+    background-color: #ccc;
+    padding: 20px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.footer p
+{
+    margin-bottom: 0px;
+    text-align: center;
+    color: #000;
+    font-size: 15px;
+} 
+
+
+/*<!--------------------conver csv to jasson page css-------------------------->*/
+
+
+.uppd_set{text-align: center;margin-top: 5em;}
+
+
+.upp_bg
+{
+    margin: auto;
+    display: table;
+    width: 50%;
+    min-height: 188px;
+    background-color: #ccc;
+    padding-top: 25px;
+    border-radius: 4px;
+    -webkit-box-shadow:0px 4px 17px #ccc;
+    -moz-box-shadow:0px 4px 17px #ccc;
+    box-shadow:0px 4px 17px #ccc;
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.btn-upload {
+    color: #fff;
+    background-color: #f7971d;
+    border-color: #fff;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-image: none;
+    border: 1px solid #fff;
+    border-radius: 4px 0px 0px 4px;
+}
+.btn-update {
+    color: #fff;
+    margin-top: 10px;
+    background-color: #f7971d;
+    border-color: #fff;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-image: none;
+    border: 1px solid #fff;
+    border-radius: 0px 4px 4px 0px;
+}
+.btn-update button
+{
+    color: #fff;
+    background-color: #f7971d;
+    border: none;
+}
+
+.btn-update button:focus{border: none;}
+
+.upp_bg form{margin-bottom: 0px;}
+.per_msg p{margin:0;padding-top: 10px;padding-bottom: 10px;font-size: 16px;text-transform: capitalize;color: #139a15;}
+
+.chart-btn {
+    color: #fff;
+    margin-top: 0px;
+    background-color: #f7971d;
+    border-color: #fff;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-image: none;
+    border: 1px solid #fff;
+    border-radius: 4px;
+}
+
+.chart-btn button
+{
+    color: #fff;
+    background-color: #f7971d;
+    border: none;
+}

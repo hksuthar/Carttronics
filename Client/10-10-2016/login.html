@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="UTF-8">
+        <title>Login</title>
+        <link href="css/bootstrap.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/style1.css">
+    </head>
+    <body ng-app="MyApp">
+
+        <div class="login-header">
+            <div class="container">
+                <div class="col-sm-12">
+                    <a href="index.html"><img src="image/Logo.jpg" class="img-responsive"></a>
+                </div>
+            </div>
+        </div>
+
+
+        <section class="container" ng-controller="carttronics_login">
+            <div class="login-form">
+                <div class="form-group">
+                    <label>User Name:</label>
+                    <input type="text" name="username" ng-model ="user.email" placeholder="Enter your Username" required>
+                </div>
+                <div class="form-group">
+                    <label>Password:</label>
+                    <input type="password" name="pass" ng-model="user.pass" placeholder="Enter your Password" required>
+                </div>
+                <div class="form-group">
+                    <div class="rem-link">
+                        <input type="checkbox" name="" value="" checked><span>&nbsp;Remember me next time</span><br>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="login-btn">
+                        <input type="submit" ng-click="Login()" value="Login">
+                    </div>
+                </div>
+                <div class="form-group fp-link">
+                    <a href="forgotpassword.html">Forgot Password</a>
+                </div>
+            </div>
+        </section>
+         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+        <script src = "controllers/control.js"></script>
+    </body>
+</html>

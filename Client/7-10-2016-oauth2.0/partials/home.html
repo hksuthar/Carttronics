@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">Home Page</div>
+    <div class="panel-body">
+     <div id="contentWrapper" class="full-page">
+        <article id="showCase">
+            <div class="">  
+                <div id="store1" class="tabcontent ghraphs-tabs">
+                    <ul class="tab">
+                        <li><a href="#" class="tablinks1 active" onclick="openCity1(event, 'London')">Cart location1</a></li>
+                        <li><a href="#" class="tablinks1" onclick="openCity1(event, 'Paris')">Cart location2</a></li>
+                    </ul>
+                    <div id="London" class="tabcontent1" style="display: block;">
+                        <!-- <img  src="image/chart3.jpg"> -->
+                        <div id="myChart"></div>
+                    </div>
+                    <div id="Paris" class="tabcontent1" style="display: none;">
+                        <img  src="image/chart2.png">
+                    </div>
+                </div>
+            </div>
+            <div id="store2" class="tabcontent">
+                <img  src="image/chart3.jpg">
+            </div>
+            <div id="store3" class="tabcontent">
+                <img  src="image/chart1.jpg">
+            </div>
+            <div id="store4" class="tabcontent">
+                <img  src="image/chart3.jpg">
+            </div>
+            <div id="store5" class="tabcontent">
+                <img  src="image/chart1.jpg">
+            </div>
+        </article>
+
+        <div class="detpicker-set">
+            <form action="#">
+                <span> Date: </span>
+                <input type="date" name="week">
+                <input type="submit">
+            </form>
+        </div>
+
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Select Graph Show</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#home">1 D</a>
+                <a href="#about">1 W</a>
+            </div>
+        </div>
+    </div> 
+    </div>
+  </div>
+</div>
+</div>
+

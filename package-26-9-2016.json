@@ -1,0 +1,25 @@
+{
+  "name": "carttronics_graph",
+  "version": "0.0.0",
+  "description": "Carttronics_Graph",
+  "main": "server.js",
+  "author": {
+    "name": "Hems",
+    "email": ""
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "csv-parse": "^1.1.7",
+    "csvjson": "^2.2.0",
+    "express": "^4.14.0",
+    "fast-csv": "^2.2.0",
+    "fs": "0.0.1-security",
+    "jsonfile": "^2.4.0",
+    "moment": "^2.15.1",
+    "mongodb": "^2.2.10",
+    "mongojs": "^2.4.0",
+    "multer": "^1.2.0",
+    "path": "^0.12.7",
+    "zingchart": "^2.4.1"
+  }
+}

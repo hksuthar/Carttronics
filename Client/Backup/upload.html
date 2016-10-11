@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Upload File</title>
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="css/style_upload.css"/>
+        <script>
+            function submit() {
+                window.open('index.html');
+            }
+        </script>
+    </head>
+
+    <header>
+        <div class="head_set">
+            <div class="container">
+                <a href="index.html"><img src="image/Logo.png" class="img-responsive" alt="logo"/></a>
+            </div>
+        </div>
+    </header>
+
+    <body ng-app="fileUpload">
+        <div class="container">
+            <div class="uppd_set">
+                <div class="cartTronics upp_bg">
+                    <form ng-controller="MyCtrl as up" name="up.upload_form">
+                        <div class="fileUpload btn-upload">
+                            <img src="image/upload.png">
+                            <span>Upload</span>
+                            <!-- <input 
+                                type="file" 
+                                ngf-select 
+                                ng-model="up.file" 
+                                name="file" 
+                                ngf-pattern="'*/*'"
+                                accept="*/*" 
+                                ngf-max-size="50MB"
+                                class="upload" 
+                                />
+                                 <button type="submit" ng-click="up.submit()">submit</button>
+            <p>{{up.progress}}</p> -->
+                            <input type="file" ngf-select ng-model="up.file" name="file" class="upload" />
+                        </div>
+                        <div class="btn-update">
+                            <img src="image/update.png">
+                            <button type="submit" ng-click="up.submit()" class="file-upload"> Update </button>
+                        </div>
+                        <div class="per_msg">
+                            <p>{{up.progress}}</p>
+                            <button type="submit" onclick="submit()"> Home </button>
+                            <!-- <button type="submit" onclick="submit()">Display Chart</button> -->
+                        </div>
+                    </form>
+<!--                    <div class="chart-btn">
+                        <img src="image/bar-chart.png">
+                        <button type="submit" onclick="submit()"> Display Chart </button>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+            <div class="footer">
+                <div class="Addmin_foot">
+                    <p>© CARTTRONICS, INC. ALL RIGHTS RESERVED</p>
+                </div>
+            </div>
+
+    </body>
+    <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="node_modules/ng-file-upload/dist/ng-file-upload.min.js"></script>
+    <script type="text/javascript" src="node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js"></script>
+    <script type="text/javascript" src="controllers/main.js"></script>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html ng-app>
+    <head>
+        <meta charset="UTF-8">
+        <title>Dashboard</title>
+        <link href="css/bootstrap.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/style1.css">
+        <script src="controllers/controller.js"></script>
+    </head>
+    <body>
+
+        <div id="wrapper">
+            <div id="leftWrapper">
+                <div id="listView" class="list" ng-model="Chart_1">
+                    <li class="list-item-active"><a href="#" class="tablinks" onclick="openCity(event, 'store1')">Albertsons 6713</a></li>
+                    <li><a href="#" class="tablinks" onclick="openCity(event, 'store2')">Albertsons Market 671</a></li>
+                    <li><a href="#" class="tablinks" onclick="openCity(event, 'store3')"> Albertsons Market 672</a></li>
+                    <li><a href="#" class="tablinks" onclick="openCity(event, 'store4')"> Albertsons Market 690</a></li>
+                    <li><a href="#" class="tablinks" onclick="openCity(event, 'store5')"> Albertsons 6713</a></li>
+                </div>
+            </div>
+
+            <div id="rightWrapper" class="full-page">
+
+                <!--                    <div id="header" class="header-sett"><a id="fullPage" href="#">|||</a><p>store</p></div>-->
+                <div id="header" class="header-sett">
+                    <div class="container-fluid">
+                        <div class="col-sm-3">
+                            <div class="container-menu" onclick="myFunction(this)">
+                                <a id="fullPage" href="#">
+                                    <div class="bar1"></div>
+                                    <div class="bar2"></div>
+                                    <div class="bar3"></div>
+                                    <p>stores</p></a>  
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 logo-set">
+                            <a href="index.html"><img src="image/Logo.jpg" class="img-responsive"/></a>
+                        </div>
+
+                        <div class="btn-group">
+                            <div class="btn-admin">
+                                <button onclick="window.location.href = 'dashboard.html'">Administrator</button>
+                            </div>
+                            <div class="btn-upload">
+                                <button onclick="window.location.href = 'upload.html'">Upload</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- header end -->    
+                <div id="contentWrapper" ng-controller="AppCtrl">
+
+                    <div class="container-fluid">
+                        <div class="page_heading">
+                            <h3>Registration</h3>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-lg-6 col-ks">
+                            <div class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="res-control-label col-sm-2">First Name:</label>
+                                    <div class="col-sm-9" >
+                                        <input class="form-control" ng-model="carto.f_name" placeholder="Enter First Name" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="res-control-label col-sm-2">Middle Name:</label>
+                                    <div class="col-sm-9" >
+                                        <input class="form-control" ng-model="carto.m_name" placeholder="Enter Middle Name" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="res-control-label col-sm-2">Last Name:</label>
+                                    <div class="col-sm-9" >
+                                        <input class="form-control" ng-model="carto.l_name"  placeholder="Enter Last Name" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="res-control-label col-sm-2">User name:</label>
+                                    <div class="col-sm-9" >
+                                        <input class="form-control" ng-model="carto.username"  placeholder="Enter User Name" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="res-control-label col-sm-2">Email:</label>
+                                    <div class="col-sm-9" >
+                                        <input class="form-control" ng-model="carto.email" placeholder="Enter email" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="res-control-label col-sm-2">Password:</label>
+                                    <div class="col-sm-9" >
+                                        <input class="form-control" ng-model="carto.password" placeholder="Enter password" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="res-control-label col-sm-2">Description:</label>
+                                    <div class="col-sm-9" >
+                                        <input class="form-control" placeholder="Description" ng-model="carto.desc" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="res-control-label col-sm-2">Roles:</label>
+                                    <div class="col-sm-9 resg">
+                                        <div class="col-sm-5">
+                                            <input ng-model="carto.roles" type="radio" name="roles" ng-value="'Administrator'"><span>Administrator</span>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <input ng-model="carto.roles" type="radio" name="roles" ng-value="'User'"><span>User</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="res-control-label col-sm-2">Company:</label>
+                                    <div class="col-sm-9" >
+                                        <input class="form-control" ng-model="carto.company" placeholder="Company" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="res-control-label col-sm-2">Street Add:</label>
+                                    <div class="col-sm-9" >
+                                        <input class="form-control" placeholder="Address" ng-model="carto.s_address" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-lg-6">
+                            <div class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="res-control-label col-sm-2">Address:</label>
+                                    <div class="col-sm-9" >
+                                        <input class="form-control" placeholder="Address" ng-model="carto.address" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="res-control-label col-sm-2">City:</label>
+                                    <div class="col-sm-9" >
+                                        <input class="form-control" ng-model="carto.city" placeholder="city" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="res-control-label col-sm-2">State of province:</label>
+                                    <div class="col-sm-9" >
+                                        <input class="form-control" ng-model="carto.s_o_pro" placeholder="State of province" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="res-control-label col-sm-2">Zip Code:</label>
+                                    <div class="col-sm-9" >
+                                        <input class="form-control" placeholder="Zip Code" ng-model="carto.zipcode" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="res-control-label col-sm-2">Country:</label>
+                                    <div class="col-sm-9" >
+                                        <input class="form-control" placeholder="Country" ng-model="carto.country" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="res-control-label col-sm-2">Business Phone:</label>
+                                    <div class="col-sm-9" >
+                                        <input class="form-control" placeholder="Business phone" ng-model="carto.b_phone" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="res-control-label col-sm-2">Business Ext Phone:</label>
+                                    <div class="col-sm-9" >
+                                        <input class="form-control" placeholder="Business Extra Phone" ng-model="carto.b_f_phone" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="res-control-label col-sm-2">Fax:</label>
+                                    <div class="col-sm-9" >
+                                        <input class="form-control" placeholder="Fax" ng-model="carto.fax" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="res-control-label col-sm-2">Cell Phone:</label>
+                                    <div class="col-sm-9" >
+                                        <input class="form-control" placeholder="Cell Phone" ng-model="carto.phone" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="res-control-label col-sm-2">Store Access:</label>
+                                    <div class="col-sm-9" >
+                                        <input class="form-control" placeholder="Store Acess" ng-model="carto.store_access" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="btn_center">
+                            <div class="col-sm-6">
+                                <input type="submit"  ng-click="addUser()" value="submit"/>
+                            </div>
+                            <div class="add_btn col-sm-6">
+                                <input type="reset" value="cancel"/>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
+        <script src="js/index.js"></script>
+
+
+        <script>
+            function openCity(evt, cityName) {
+                // Declare all variables
+                var i, tabcontent, tablinks;
+
+                // Get all elements with class="tabcontent" and hide them
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+
+                // Get all elements with class="tablinks" and remove the class "active"
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+
+                // Show the current tab, and add an "active" class to the link that opened the tab
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        </script>
+
+    </body>
+</html>

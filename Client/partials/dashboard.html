@@ -1,0 +1,178 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">User Details</div>
+    <div class="panel-body">
+        <div id="contentWrapper">
+            <div class="admin_tab">
+                <h4>Site Admin</h4>
+                <div class="adduser-btn">
+                    <button onclick="window.location.href='registration.html'">Add User</button> 
+                </div>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>links</th>
+                            <th>User name</th>
+                            <th>Email</th>
+                            <th>Description</th>
+                            <th>Delete data</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="carto in user">
+                            <td><a ng-click="edit(carto._id)">Select</a></td>
+                            <td>{{carto.username}}</td>
+                            <td>{{carto.email}}</td>
+                            <td>{{carto.desc}}</td>
+                            <td><button ng-click="remove(carto._id)">Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <div>
+                    <ul class="pagination">
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="usd show-tab">
+                <h2>User Information</h2>
+                <ul class="tab">
+                    <li><a href="#" class="tablinks active" onclick="openCity(event, 'London')">Accounts</a></li>
+                    <li><a href="#" class="tablinks" onclick="openCity(event, 'Paris')">Profile</a></li>
+                    <li><a href="#" class="tablinks" onclick="openCity(event, 'Tokyo')">Store Access</a></li>
+                </ul>
+
+                <div id="London" class="tabcontent" style="display: block;">
+                    <form name="store-access" method="pots">
+                        <div class="tab_table">
+                            <h4>Create User Accounts</h4>
+                            <table>
+                                <tbody >
+                                    <tr>
+                                        <td>user name:</td>
+                                        <td><input class="form-contact" ng-model="carto.username"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>password:</td>
+                                        <td><input type="password" class="form-contact" ng-model="carto.password"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email:</td>
+                                        <td><input type="Email" ng-model="carto.email"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Description:</td>
+                                        <td><input type="text" ng-model="carto.desc"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Roles:</td>
+                                        <td><input ng-model="carto.roles" type="radio" name="roles" ng-value="'Administrator'"><span>Administrator</span>
+                                        <input ng-model="carto.roles" type="radio" name="roles" ng-value="'User'"><span>User</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><button ng-click="update()">Save</button></td>
+                                        <td><button>cancel</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="Paris" class="tabcontent">
+                    <form name="store-access" method="pots">
+                        <div class="tab_table">
+                            <h4>User profile Information</h4>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>First name:</td>
+                                        <td><input type="text" ng-model="carto.f_name"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Middle name:</td>
+                                        <td><input type="text" ng-model="carto.m_name"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Last name:</td>
+                                        <td><input type="text" ng-model="carto.l_name"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Company:</td>
+                                        <td><input type="text" ng-model="carto.company"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Street Address:</td>
+                                        <td><input type="text" ng-model="carto.s_address"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Address:</td>
+                                        <td><input type="text" ng-model="carto.address"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>City:</td>
+                                        <td><input type="text" ng-model="carto.city"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>State Or Province:</td>
+                                        <td><input type="text" ng-model="carto.s_o_pro"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Zip code:</td>
+                                        <td><input type="text" ng-model="carto.zipcode"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Country:</td>
+                                        <td><input type="text" ng-model="carto.country"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Business Phone:</td>
+                                        <td><input type="text" ng-model="carto.b_phone"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Business Phone Ext:</td>
+                                        <td><input type="text" ng-model="carto.b_f_phone"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fax:</td>
+                                        <td><input type="text" ng-model="carto.fax"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cell Phone:</td>
+                                        <td><input type="text" ng-model="carto.phone"></td>
+                                    </tr>
+                                   
+                                    <tr>
+                                        <td><button ng-click="update()">Save</button></td>
+                                        <td><button>cancel</button></td> 
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="Tokyo" class="tabcontent">
+                    <h4>Store Access Data</h4>
+                    <form name="store-access" method="pots">
+                        <div class="data_box">
+                            <div class="col-sm-2 btn_set">
+                                <input type="submit" name="submit" id="submit" value="Save"/> 
+                            </div>
+                            <div class="col-sm-2 btn_set">
+                                <input type="reset" name="reset" id="reset" value="Cancel"/> 
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </div>
+</div>

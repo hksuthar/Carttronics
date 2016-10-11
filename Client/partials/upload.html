@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">Upload CSV Files</div>
+    <div class="panel-body">
+        <section class="container">
+            <div class="col-sm-6 col-sm-offset-3 upload-sec">
+                <form ng-controller="MyCtrl as up" name="up.upload_form">
+                    <div class="fileUpload btn-upload-new ">
+                        <span>Upload</span>
+                        <input type="file" ngf-select ng-model="up.file" name="file" class="upload" />
+                    </div>
+
+                    <div class="btn-update">
+                        <button type="submit" ng-click="up.submit()" class="file-upload"> Update </button>
+                    </div>
+                    <div class="per_msg">
+                        <p>{{up.progress}}</p>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+  </div>
+</div>
+        
